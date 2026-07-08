@@ -1,0 +1,10 @@
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        buy,profit=prices[0],0
+        for sell in prices[1:]:
+            if buy>sell:
+                buy=sell
+            else:
+                profit=max(profit,sell-buy)
+        return profit
+        
